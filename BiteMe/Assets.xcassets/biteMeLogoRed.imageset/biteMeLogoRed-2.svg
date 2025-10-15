@@ -1,0 +1,14 @@
+<svg width="512" height="512" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Steam lines -->
+  <path d="M 45 25 Q 43 20 45 15" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 60 22 Q 58 17 60 12" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 75 25 Q 77 20 75 15" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Bowl -->
+  <ellipse cx="60" cy="50" rx="35" ry="8" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+  <path d="M 25 50 Q 25 80 60 85 Q 95 80 95 50" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Chopsticks -->
+  <line x1="70" y1="45" x2="100" y2="30" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+  <line x1="75" y1="48" x2="105" y2="35" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+</svg>
