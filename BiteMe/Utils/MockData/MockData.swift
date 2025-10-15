@@ -43,7 +43,8 @@ struct MockData {
         .init(
             id: NSUUID().uuidString,
             firstName: "Andy",
-            username: "andyking15"
+            username: "andyking15",
+            profileImageURL: "exampleProfileImg"
         )
     ]
 }

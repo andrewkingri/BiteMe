@@ -11,4 +11,5 @@ struct User: Identifiable, Hashable {
     let id: String
     let firstName: String
     let username: String
+    let profileImageURL: String
 }
