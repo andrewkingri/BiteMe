@@ -13,6 +13,7 @@
 		462032A92EA024740056EF0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462032A82EA024740056EF0E /* User.swift */; };
 		462032AB2EA02F220056EF0E /* EditUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462032AA2EA02F220056EF0E /* EditUserProfileView.swift */; };
 		462032AD2EA031710056EF0E /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462032AC2EA031710056EF0E /* ImageGridView.swift */; };
+		462032B12EA41A850056EF0E /* RecipeMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462032B02EA41A850056EF0E /* RecipeMatchView.swift */; };
 		465DA94B2E9ABEE2001442EE /* BiteMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA94A2E9ABEE2001442EE /* BiteMeApp.swift */; };
 		465DA94D2E9ABEE2001442EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA94C2E9ABEE2001442EE /* ContentView.swift */; };
 		465DA94F2E9ABEE5001442EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465DA94E2E9ABEE5001442EE /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		462032A82EA024740056EF0E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		462032AA2EA02F220056EF0E /* EditUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileView.swift; sourceTree = "<group>"; };
 		462032AC2EA031710056EF0E /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		462032B02EA41A850056EF0E /* RecipeMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMatchView.swift; sourceTree = "<group>"; };
 		465DA9472E9ABEE2001442EE /* BiteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BiteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465DA94A2E9ABEE2001442EE /* BiteMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiteMeApp.swift; sourceTree = "<group>"; };
 		465DA94C2E9ABEE2001442EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		462032AE2EA41A5C0056EF0E /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				462032AF2EA41A750056EF0E /* View */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		462032AF2EA41A750056EF0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				462032B02EA41A850056EF0E /* RecipeMatchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		465DA93E2E9ABEE2001442EE = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +229,7 @@
 		465DA9752E9ABFF7001442EE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				462032AE2EA41A5C0056EF0E /* Matches */,
 				462032A12EA022D00056EF0E /* UserProfile */,
 				465DA97E2E9AC0E7001442EE /* Saved */,
 				465DA97D2E9AC0DB001442EE /* Search */,
@@ -488,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462032B12EA41A850056EF0E /* RecipeMatchView.swift in Sources */,
 				465DA98C2E9ADE3B001442EE /* ImageScrollingOverlay.swift in Sources */,
 				462032A32EA022FB0056EF0E /* CurrentUserProfileView.swift in Sources */,
 				465DA99D2E9AEC4D001442EE /* CardService.swift in Sources */,
