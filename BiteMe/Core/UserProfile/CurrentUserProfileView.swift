@@ -10,7 +10,12 @@ import SwiftUI
 struct CurrentUserProfileView: View {
     @State private var showEditProfile = false
     let user: User
-    
+
+    init(user: User) {
+        self.user = user
+        UITableView.appearance().backgroundColor = UIColor(Color.cream)
+    }
+
     var body: some View {
         NavigationView { // NavigationStack
             List {
@@ -49,7 +54,7 @@ struct CurrentUserProfileView: View {
                     Button("Logout") {
                         
                     }
-                    .foregroundStyle(.red)
+                    .foregroundStyle(Color.tomato)
                 }
                 
                 // delete account
@@ -57,10 +62,11 @@ struct CurrentUserProfileView: View {
                     Button("Delete Account") {
                         
                     }
-                    .foregroundStyle(.red)
+                    .foregroundStyle(Color.tomato)
                 }
                 
             }
+            .background(Color.cream)
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .fullScreenCover(isPresented: $showEditProfile) {

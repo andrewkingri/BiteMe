@@ -26,12 +26,12 @@ struct ImageGridView: View {
                 } else {
                     ZStack(alignment: .bottomTrailing) {
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(.secondarySystemBackground))
+                            .fill(Color.coffee.opacity(0.08))
                             .frame(width: imageWidth, height: imageHeight)
                         
                         Image(systemName: "plus.circle.fill")
                             .imageScale(.large)
-                            .foregroundStyle(.pink)
+                            .foregroundStyle(Color.mustard)
                             .offset(x: 4, y: 4)
                     }
                 }

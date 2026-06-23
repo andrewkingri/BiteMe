@@ -34,7 +34,7 @@ struct RecipeProfileView: View {
                     Image(systemName: "arrow.down.circle.fill")
                         .imageScale(.large)
                         .font(Font.body.weight(.bold))
-                        .foregroundStyle(.pink)
+                        .foregroundStyle(Color.mustard)
                 }
             }
             .padding(.horizontal)
@@ -68,7 +68,7 @@ struct RecipeProfileView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
-                    .background(Color(.secondarySystemBackground))
+                    .background(Color.coffee.opacity(0.08))
                     .font(.subheadline)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
@@ -102,11 +102,13 @@ struct RecipeProfileView: View {
                     }
                 }
                 .padding()
-                .background(Color(.secondarySystemBackground))
+                .background(Color.coffee.opacity(0.08))
                 .font(.subheadline)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
+        .background(Color.cream)
+        .foregroundStyle(Color.coffee)
     }
 }
 

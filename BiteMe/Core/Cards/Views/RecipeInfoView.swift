@@ -39,10 +39,10 @@ struct RecipeInfoView: View {
                 .font(.subheadline)
                 .lineLimit(2)
         } // VStack
-        .foregroundStyle(.white)
+        .foregroundStyle(Color.cream)
         .padding()
         .background(
-            LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.clear, Color.coffee], startPoint: .top, endPoint: .bottom)
         )
         
         

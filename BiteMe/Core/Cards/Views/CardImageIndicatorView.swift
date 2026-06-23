@@ -15,7 +15,7 @@ struct CardImageIndicatorView: View {
         HStack {
             ForEach(0 ..< imageCount, id: \.self) { index in
                 Capsule()
-                    .foregroundStyle(currentImageIndex == index ? .white : .gray)
+                    .foregroundStyle(currentImageIndex == index ? Color.cream : Color.cream.opacity(0.4))
                     .frame(width: imageIndicatorWidth, height: 4)
                     .padding(.top, 8)
             }

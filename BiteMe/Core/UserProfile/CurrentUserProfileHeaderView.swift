@@ -21,17 +21,17 @@ struct CurrentUserProfileHeaderView: View {
                     .clipShape(Circle())
                     .background { // frame & shadow
                         Circle()
-                            .fill(Color(.systemGray6))
+                            .fill(Color.coffee.opacity(0.08))
                             .frame(width: 128, height: 128)
                             .shadow(radius: 10)
                     }
                 
                 Image(systemName: "pencil")
                     .imageScale(.small)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color.coffee)
                     .background {
                         Circle()
-                            .fill(.white)
+                            .fill(Color.cream)
                             .frame(width: 32, height: 32)
                     }
                     .offset(x: -8, y: 10)

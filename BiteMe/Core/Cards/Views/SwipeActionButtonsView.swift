@@ -17,10 +17,10 @@ struct SwipeActionButtonsView: View {
             } label: {
                 Image(systemName: "xmark")
                     .font(Font.body.weight(.bold))
-                    .foregroundStyle(.red)
+                    .foregroundStyle(Color.tomato)
                     .background {
                         Circle()
-                            .fill(.white)
+                            .fill(Color.cream)
                             .frame(width: 48, height: 48)
                             .shadow(radius: 6)
                     }
@@ -34,10 +34,10 @@ struct SwipeActionButtonsView: View {
             } label: {
                 Image(systemName: "heart.fill")
                     .font(Font.body.weight(.bold))
-                    .foregroundStyle(.green)
+                    .foregroundStyle(Color.herbGreen)
                     .background {
                         Circle()
-                            .fill(.white)
+                            .fill(Color.cream)
                             .frame(width: 48, height: 48)
                             .shadow(radius: 6)
                     }

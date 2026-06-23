@@ -13,7 +13,7 @@ struct RecipeMatchView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.black.opacity(0.7))
+                .fill(Color.coffee.opacity(0.85))
 //                .opacity(0.7)
                 .ignoresSafeArea()
             
@@ -22,7 +22,7 @@ struct RecipeMatchView: View {
                     Image("its-a-match")
                     
                     Text("You saved recipe to your likes")
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color.cream)
                 }
                 
                 HStack {
@@ -33,7 +33,7 @@ struct RecipeMatchView: View {
                         .clipShape(Circle())
                         .overlay {
                             Circle()
-                                .stroke(.white, lineWidth: 2)
+                                .stroke(Color.cream, lineWidth: 2)
                                 .shadow(radius: 4)
                             
                         }
@@ -45,7 +45,7 @@ struct RecipeMatchView: View {
                         .clipShape(Circle())
                         .overlay {
                             Circle()
-                                .stroke(.white, lineWidth: 2)
+                                .stroke(Color.cream, lineWidth: 2)
                                 .shadow(radius: 4)
                             
                         }
@@ -57,9 +57,9 @@ struct RecipeMatchView: View {
                     }
                     .font(.subheadline)
                     .font(Font.body.weight(.bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.coffee)
                     .frame(width: 350, height: 44)
-                    .background(.pink)
+                    .background(Color.mustard)
                     .clipShape(Capsule())
                     
                     Button("Keep Swiping") {
@@ -67,13 +67,13 @@ struct RecipeMatchView: View {
                     }
                     .font(.subheadline)
                     .font(Font.body.weight(.bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.cream)
                     .frame(width: 350, height: 44)
                     .background(.clear)
                     .clipShape(Capsule())
                     .overlay {
                         Capsule()
-                            .stroke(.white, lineWidth: 1)
+                            .stroke(Color.cream, lineWidth: 1)
                             .shadow(radius: 4)
                         
                     }

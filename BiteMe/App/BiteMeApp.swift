@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct BiteMeApp: App {
+    @StateObject private var savedRecipes = SavedRecipes()
+
     var body: some Scene {
         WindowGroup {
 //            ContentView()
             MainTabView()
+                .environmentObject(savedRecipes)
         }
     }
 }

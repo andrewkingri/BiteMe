@@ -20,6 +20,7 @@ struct EditUserProfileView: View {
             ScrollView(showsIndicators: false) {
                 ImageGridView(user: user)
                     .padding()
+                    .foregroundStyle(Color.coffee)
                 
                 VStack(spacing: 24) {
                     VStack(alignment: .leading) {
@@ -33,7 +34,7 @@ struct EditUserProfileView: View {
                         TextField("Add your bio", text: $bio)
                             .padding()
                             .frame(height: 64, alignment: .top)
-                            .background(Color(.secondarySystemBackground))
+                            .background(Color.coffee.opacity(0.08))
                             .font(.subheadline)
                     }
                     
@@ -54,7 +55,7 @@ struct EditUserProfileView: View {
                                 .font(.footnote)
                         }
                         .padding()
-                        .background(Color(.secondarySystemBackground))
+                        .background(Color.coffee.opacity(0.08))
                         .font(.subheadline)
                     }
                     
@@ -73,7 +74,7 @@ struct EditUserProfileView: View {
                                 .imageScale(.small)
                         }
                         .padding()
-                        .background(Color(.secondarySystemBackground))
+                        .background(Color.coffee.opacity(0.08))
                         .font(.subheadline)
                     }
                     
@@ -92,11 +93,13 @@ struct EditUserProfileView: View {
                                 .imageScale(.small)
                         }
                         .padding()
-                        .background(Color(.secondarySystemBackground))
+                        .background(Color.coffee.opacity(0.08))
                         .font(.subheadline)
                     }
                 }
+                .foregroundStyle(Color.coffee)
             }
+            .background(Color.cream)
             .navigationTitle("Edit Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

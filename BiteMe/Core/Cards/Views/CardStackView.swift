@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct CardStackView: View {
-    @State private var showMatchView = true
+    @State private var showMatchView = false
     @StateObject var viewModel = CardsViewModel(service: CardService())
     
     var body: some View {
         ZStack {
+            Color.cream
+                .ignoresSafeArea()
+
             VStack(alignment: .leading) {
                 
                 // Logo
@@ -46,6 +49,10 @@ struct CardStackView: View {
 
 struct CardStackView_Previews: PreviewProvider {
     static var previews: some View {
-        CardStackView()
+        Group {
+            CardStackView()
+            CardStackView()
+        }
+        .environmentObject(SavedRecipes())
     }
 }

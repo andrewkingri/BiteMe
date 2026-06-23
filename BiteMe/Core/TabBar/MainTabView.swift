@@ -18,7 +18,7 @@ struct MainTabView: View {
                 .tabItem { Image(systemName: "magnifyingglass") }
                 .tag(1)
             
-            Text("saved view")
+            SavedRecipesView()
                 .tabItem { Image(systemName: "heart") }
                 .tag(2)
             
@@ -26,13 +26,14 @@ struct MainTabView: View {
                 .tabItem { Image(systemName: "person") }
                 .tag(3)
         }
-        .tint(.primary)
-        .accentColor(.red)
+        .tint(Color.mustard)
+        .background(Color.cream)
     }
 }
 
 struct MainTabBar_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
+            .environmentObject(SavedRecipes())
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct CardView: View {
     
     @ObservedObject var viewModel: CardsViewModel
+    @EnvironmentObject private var savedRecipes: SavedRecipes
     
     @State private var xOffset: CGFloat = 0
     @State private var degrees: Double = 0
@@ -83,6 +84,7 @@ private extension CardView {
         xOffset = 500
         degrees = 12
         
+        savedRecipes.save(model.recipe)
         viewModel.removeCard(model)
         
         
@@ -152,6 +154,7 @@ struct CardView_Previews: PreviewProvider {
             model: CardModel(
                 recipe: MockData.recipes[1]
             )
-        ) // CardsView
+        )
+        .environmentObject(SavedRecipes())
     }
 } // CardView_Previews

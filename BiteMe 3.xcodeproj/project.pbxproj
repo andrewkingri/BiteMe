@@ -36,6 +36,9 @@
 		465DA9A02E9AED5C001442EE /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA99F2E9AED5C001442EE /* MockData.swift */; };
 		465DA9A22E9AFD4A001442EE /* SwipeActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA9A12E9AFD4A001442EE /* SwipeActionButtonsView.swift */; };
 		465DA9A42E9B001C001442EE /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA9A32E9B001C001442EE /* SwipeAction.swift */; };
+		466A03602FEA2A1700E1CB35 /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */; };
+		466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */; };
+		466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		465DA99F2E9AED5C001442EE /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		465DA9A12E9AFD4A001442EE /* SwipeActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButtonsView.swift; sourceTree = "<group>"; };
 		465DA9A32E9B001C001442EE /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
+		466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
+		466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipesView.swift; sourceTree = "<group>"; };
+		466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 				465DA97B2E9AC0A6001442EE /* RecipeProfile */,
 				465DA97A2E9AC09D001442EE /* Cards */,
 				465DA9792E9AC08B001442EE /* TabBar */,
+				466A03612FEA2A3100E1CB35 /* SavedRecipes */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 		465DA9762E9ABFF9001442EE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 		465DA97E2E9AC0E7001442EE /* Saved */ = {
 			isa = PBXGroup;
 			children = (
+				466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */,
 			);
 			path = Saved;
 			sourceTree = "<group>";
@@ -375,6 +384,22 @@
 				465DA99F2E9AED5C001442EE /* MockData.swift */,
 			);
 			path = MockData;
+			sourceTree = "<group>";
+		};
+		466A03612FEA2A3100E1CB35 /* SavedRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				466A03622FEA2A3C00E1CB35 /* View */,
+			);
+			path = SavedRecipes;
+			sourceTree = "<group>";
+		};
+		466A03622FEA2A3C00E1CB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,7 +481,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 465DA9422E9ABEE2001442EE /* Build configuration list for PBXProject "BiteMe" */;
+			buildConfigurationList = 465DA9422E9ABEE2001442EE /* Build configuration list for PBXProject "BiteMe 3" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -519,6 +544,8 @@
 				465DA9A42E9B001C001442EE /* SwipeAction.swift in Sources */,
 				465DA9802E9AC120001442EE /* MainTabView.swift in Sources */,
 				462032AD2EA031710056EF0E /* ImageGridView.swift in Sources */,
+				466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */,
+				466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */,
 				465DA98E2E9AE471001442EE /* CardImageIndicatorView.swift in Sources */,
 				465DA9A22E9AFD4A001442EE /* SwipeActionButtonsView.swift in Sources */,
 				465DA9972E9AEB63001442EE /* CardModel.swift in Sources */,
@@ -531,6 +558,7 @@
 				465DA94B2E9ABEE2001442EE /* BiteMeApp.swift in Sources */,
 				465DA9942E9AEABF001442EE /* Recipe.swift in Sources */,
 				462032A92EA024740056EF0E /* User.swift in Sources */,
+				466A03602FEA2A1700E1CB35 /* SavedRecipes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +842,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		465DA9422E9ABEE2001442EE /* Build configuration list for PBXProject "BiteMe" */ = {
+		465DA9422E9ABEE2001442EE /* Build configuration list for PBXProject "BiteMe 3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				465DA9692E9ABEE5001442EE /* Debug */,

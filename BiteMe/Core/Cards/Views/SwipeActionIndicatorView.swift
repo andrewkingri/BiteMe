@@ -16,10 +16,10 @@ struct SwipeActionIndicatorView: View {
             Text("YUM!")
                 .font(.title)
                 .fontWeight(.heavy)
-                .foregroundStyle(.green)
+                .foregroundStyle(Color.herbGreen)
                 .overlay {
                     RoundedRectangle(cornerRadius: 4)
-                        .stroke(.green, lineWidth: 2)
+                        .stroke(Color.herbGreen, lineWidth: 2)
                         .frame(width: 100, height: 48)
                 } // overlay
                 .rotationEffect(.degrees(-45))
@@ -30,10 +30,10 @@ struct SwipeActionIndicatorView: View {
             Text("NOPE")
                 .font(.title)
                 .fontWeight(.heavy)
-                .foregroundStyle(.red)
+                .foregroundStyle(Color.tomato)
                 .overlay {
                     RoundedRectangle(cornerRadius: 4)
-                        .stroke(.red, lineWidth: 2)
+                        .stroke(Color.tomato, lineWidth: 2)
                         .frame(width: 100, height: 48)
                 } // overlay
                 .rotationEffect(.degrees(45))
