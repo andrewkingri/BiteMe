@@ -98,13 +98,18 @@ private extension SavedRecipesView {
 //        }
         
         ZStack(alignment: .bottomLeading) {
-            if let imageName = recipe.imageURLs.first {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 180)
-                    .clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            if let imageURL = recipe.imageURLs.first.flatMap(URL.init(string:)) {
+                AsyncImage(url: imageURL) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    Color.coffee.opacity(0.08)
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 180)
+                .clipped()
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             } else {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.coffee.opacity(0.08))
@@ -118,6 +123,11 @@ private extension SavedRecipesView {
 //                .foregroundStyle(Color.coffee)
                 .foregroundStyle(Color.cream)
                 .padding()
+                .frame(maxWidth:.infinity, alignment:.bottomLeading)
+                .background(
+                    LinearGradient(colors: [.clear, Color.coffee], startPoint: .top, endPoint: .bottom),
+                    in: RoundedRectangle(cornerRadius:10)
+                )
  
         }
     }

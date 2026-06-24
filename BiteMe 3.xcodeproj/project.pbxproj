@@ -39,6 +39,7 @@
 		466A03602FEA2A1700E1CB35 /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */; };
 		466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */; };
 		466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */; };
+		46A352362FEC0A6B0046701E /* MealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352352FEC0A6B0046701E /* MealDBService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
 		466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipesView.swift; sourceTree = "<group>"; };
 		466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		46A352352FEC0A6B0046701E /* MealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				465DA99C2E9AEC4D001442EE /* CardService.swift */,
+				46A352352FEC0A6B0046701E /* MealDBService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A352362FEC0A6B0046701E /* MealDBService.swift in Sources */,
 				462032B12EA41A850056EF0E /* RecipeMatchView.swift in Sources */,
 				465DA98C2E9ADE3B001442EE /* ImageScrollingOverlay.swift in Sources */,
 				462032A32EA022FB0056EF0E /* CurrentUserProfileView.swift in Sources */,

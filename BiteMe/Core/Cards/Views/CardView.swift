@@ -22,13 +22,18 @@ struct CardView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
-                Image(recipe.imageURLs[currentImageIndex])
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)
-                    .overlay {
-                        ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: imageCount)
-                    }
+                AsyncImage(url: URL(string: recipe.imageURLs[currentImageIndex])) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    Color.coffee.opacity(0.1)
+                }
+                .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)
+                .clipped()
+                .overlay {
+                    ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: imageCount)
+                }
                 
                 CardImageIndicatorView(currentImageIndex: currentImageIndex, imageCount: imageCount)
                 

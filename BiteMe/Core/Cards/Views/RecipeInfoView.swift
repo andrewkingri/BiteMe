@@ -20,9 +20,9 @@ struct RecipeInfoView: View {
                     .font(.title)
                     .fontWeight(.heavy)
                 
-                Text(recipe.dietTags)
-                    .font(.title)
-                    .fontWeight(.ultraLight)
+//                Text(recipe.dietTags)
+//                    .font(.title)
+//                    .fontWeight(.ultraLight)
                 
                 Spacer()
                 
@@ -38,6 +38,10 @@ struct RecipeInfoView: View {
             Text(recipe.ingredients)
                 .font(.subheadline)
                 .lineLimit(2)
+            
+//            Text(recipe.dietTags)
+//                .font(.subheadline)
+//                .lineLimit(2)
         } // VStack
         .foregroundStyle(Color.cream)
         .padding()

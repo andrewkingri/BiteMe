@@ -42,15 +42,20 @@ struct RecipeProfileView: View {
             ScrollView {
                 VStack {
                     ZStack(alignment: .top) {
-                        Image(recipe.imageURLs[currentImageIndex])
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: SizeConstants.cardWidth,
-                                   height: SizeConstants.cardHeight)
-                            .overlay {
-                                ImageScrollingOverlay(currentImageIndex: $currentImageIndex,
-                                                      imageCount: recipe.imageURLs.count)
-                            }
+                        AsyncImage(url: URL(string: recipe.imageURLs[currentImageIndex])) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            Color.coffee.opacity(0.1)
+                        }
+                        .frame(width: SizeConstants.cardWidth,
+                               height: SizeConstants.cardHeight)
+                        .clipped()
+                        .overlay {
+                            ImageScrollingOverlay(currentImageIndex: $currentImageIndex,
+                                                  imageCount: recipe.imageURLs.count)
+                        }
                         
                         CardImageIndicatorView(currentImageIndex: currentImageIndex,
                                                imageCount: recipe.imageURLs.count)

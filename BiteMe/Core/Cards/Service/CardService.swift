@@ -8,8 +8,10 @@
 import Foundation
 
 struct CardService {
+    private let mealDBService = MealDBService()
+
     func fetchCardModels() async throws -> [CardModel] {
-        let recipes = MockData.recipes
+        let recipes = try await mealDBService.fetchRandomRecipes()
         return recipes.map({ CardModel(recipe: $0) })
     }
 }
