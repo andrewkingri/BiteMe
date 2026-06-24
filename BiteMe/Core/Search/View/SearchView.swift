@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @StateObject private var viewModel = SearchViewModel()
+    @EnvironmentObject private var savedStore: SavedRecipes
     @State private var presentedRecipe: Recipe?
 
     var body: some View {
@@ -82,12 +83,11 @@ private extension SearchView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.results) { recipe in
-                        Button {
-                            presentedRecipe = recipe
-                        } label: {
-                            cell(for: recipe)
-                        }
-                        .buttonStyle(.plain)
+                        cell(for: recipe)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                presentedRecipe = recipe
+                            }
                     }
                 }
                 .padding(.horizontal, 12)
@@ -144,6 +144,28 @@ private extension SearchView {
                     in: RoundedRectangle(cornerRadius: 10)
                 )
         }
+        .overlay(alignment: .topTrailing) {
+            saveButton(for: recipe)
+                .padding(8)
+        }
+    }
+
+    @ViewBuilder
+    func saveButton(for recipe: Recipe) -> some View {
+        let isSaved = savedStore.recipes.contains(where: { $0.id == recipe.id })
+        Button {
+            if isSaved {
+                savedStore.remove(recipe)
+            } else {
+                savedStore.save(recipe)
+            }
+        } label: {
+            Image(systemName: isSaved ? "heart.fill" : "heart")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(isSaved ? Color.red : Color.cream)
+                .padding(8)
+        }
+        .buttonStyle(.plain)
     }
 }
 
