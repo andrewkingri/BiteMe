@@ -19,10 +19,17 @@ struct CardStackView: View {
             VStack(alignment: .leading) {
                 
                 // Logo
-                Image("Biteme")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 110, height: 35)
+                HStack(spacing: 0) {
+                    Image("biteme-mark-terracotta")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+
+                    Image("biteme-wordmark-standard")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35)
+                }
                 
                 // Card Stack
                 VStack(spacing: 16) {

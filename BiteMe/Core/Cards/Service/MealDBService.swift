@@ -35,6 +35,73 @@ struct MealDBService {
         let response = try JSONDecoder().decode(MealDBResponse.self, from: data)
         return (response.meals ?? []).map(Recipe.init(meal:))
     }
+
+    func searchRecipes(matching query: String) async throws -> [Recipe] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return [] }
+
+        async let nameResults = searchRecipes(byName: trimmed)
+        async let ingredientResults = searchRecipes(byIngredient: trimmed)
+
+        let (byName, byIngredient) = try await (nameResults, ingredientResults)
+
+        var seen: Set<String> = []
+        var combined: [Recipe] = []
+        for recipe in byName + byIngredient where !seen.contains(recipe.id) {
+            seen.insert(recipe.id)
+            combined.append(recipe)
+        }
+        return combined
+    }
+
+    private func searchRecipes(byName name: String) async throws -> [Recipe] {
+        guard
+            let encoded = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: "\(Self.baseURL)/search.php?s=\(encoded)")
+        else { return [] }
+
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let response = try JSONDecoder().decode(MealDBResponse.self, from: data)
+        return (response.meals ?? []).map(Recipe.init(meal:))
+    }
+
+    private func searchRecipes(byIngredient ingredient: String) async throws -> [Recipe] {
+        guard
+            let encoded = ingredient.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: "\(Self.baseURL)/filter.php?i=\(encoded)")
+        else { return [] }
+
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let response = try JSONDecoder().decode(MealDBFilterResponse.self, from: data)
+        let stubs = response.meals ?? []
+        guard !stubs.isEmpty else { return [] }
+
+        return try await withThrowingTaskGroup(of: Recipe?.self) { group in
+            for stub in stubs {
+                group.addTask { try await self.fetchDetails(id: stub.idMeal) }
+            }
+            var results: [Recipe] = []
+            for try await recipe in group {
+                if let recipe { results.append(recipe) }
+            }
+            return results
+        }
+    }
+
+    private func fetchDetails(id: String) async throws -> Recipe? {
+        guard let url = URL(string: "\(Self.baseURL)/lookup.php?i=\(id)") else { return nil }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let response = try JSONDecoder().decode(MealDBResponse.self, from: data)
+        return response.meals?.first.map(Recipe.init(meal:))
+    }
+}
+
+private struct MealDBFilterResponse: Decodable {
+    let meals: [MealDBFilterStub]?
+}
+
+private struct MealDBFilterStub: Decodable {
+    let idMeal: String
 }
 
 private struct MealDBResponse: Decodable {

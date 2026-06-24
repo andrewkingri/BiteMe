@@ -20,8 +20,8 @@ struct CurrentUserProfileView: View {
         NavigationView { // NavigationStack
             List {
                 // header view
-                CurrentUserProfileHeaderView(user: user)
-                    .onTapGesture { showEditProfile.toggle() }
+//                CurrentUserProfileHeaderView(user: user)
+//                    .onTapGesture { showEditProfile.toggle() }
                 
                 // account info view
                 Section("Section One") {
