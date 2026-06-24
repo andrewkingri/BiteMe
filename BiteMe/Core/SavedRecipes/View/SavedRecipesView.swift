@@ -98,23 +98,14 @@ private extension SavedRecipesView {
 //        }
         
         ZStack(alignment: .bottomLeading) {
-            if let imageURL = recipe.imageURLs.first.flatMap(URL.init(string:)) {
-                AsyncImage(url: imageURL) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                } placeholder: {
-                    Color.coffee.opacity(0.08)
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 180)
-                .clipped()
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-            } else {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.coffee.opacity(0.08))
-                    .frame(height: 180)
+            CachedAsyncImage(url: recipe.imageURLs.first.flatMap(URL.init(string:))) {
+                Color.coffee.opacity(0.08)
             }
+            .scaledToFill()
+            .frame(maxWidth: .infinity)
+            .frame(height: 180)
+            .clipped()
+            .clipShape(RoundedRectangle(cornerRadius: 10))
 
             Text(recipe.name)
                 .font(.subheadline)

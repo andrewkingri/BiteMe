@@ -21,9 +21,9 @@ struct RecipeProfileView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                 
-                Text(recipe.dietTags)
-                    .font(.title2)
-                    .fontWeight(.ultraLight)
+//                Text(recipe.dietTags)
+//                    .font(.title2)
+//                    .fontWeight(.ultraLight)
                 
                 Spacer()
                 
@@ -62,14 +62,46 @@ struct RecipeProfileView: View {
                     }
                     
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Description")
+                        Text("Ingredients")
                             .fontWeight(.semibold)
-                        
-//                        if let ingredients = recipe.ingredients {
-//                            Text(ingredients)
-//                        }
-                        
-                        Text("some random text in here description")
+
+                        if recipe.ingredients.isEmpty {
+                            Text("No ingredients listed.")
+                                .italic()
+                                .foregroundStyle(Color.coffee.opacity(0.6))
+                        } else {
+                            VStack(alignment: .leading, spacing: 6) {
+                                ForEach(Array(recipe.ingredients.enumerated()), id: \.offset) { _, ingredient in
+                                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                        Text("•")
+                                        if !ingredient.measure.isEmpty {
+                                            Text(ingredient.measure)
+                                                .fontWeight(.semibold)
+                                        }
+                                        Text(ingredient.name)
+                                        Spacer(minLength: 0)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                    .background(Color.coffee.opacity(0.08))
+                    .font(.subheadline)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Instructions")
+                            .fontWeight(.semibold)
+
+                        if recipe.instructions.isEmpty {
+                            Text("No instructions available for this recipe.")
+                                .italic()
+                                .foregroundStyle(Color.coffee.opacity(0.6))
+                        } else {
+                            Text(recipe.instructions)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
@@ -78,38 +110,38 @@ struct RecipeProfileView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Essentials")
-                        .fontWeight(.semibold)
-                    
-                    HStack {
-                        Image(systemName: "person")
-                                                
-                        Text("Woman")
-                        
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Image(systemName: "arrow.down.forward.and.arrow.up.backward.circle")
-                                                
-                        Text("Straight")
-                        
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Image(systemName: "book")
-                                                
-                        Text("Actress")
-                        
-                        Spacer()
-                    }
-                }
-                .padding()
-                .background(Color.coffee.opacity(0.08))
-                .font(.subheadline)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+//                VStack(alignment: .leading, spacing: 12) {
+//                    Text("Essentials")
+//                        .fontWeight(.semibold)
+//                    
+//                    HStack {
+//                        Image(systemName: "person")
+//                                                
+//                        Text("Woman")
+//                        
+//                        Spacer()
+//                    }
+//                    
+//                    HStack {
+//                        Image(systemName: "arrow.down.forward.and.arrow.up.backward.circle")
+//                                                
+//                        Text("Straight")
+//                        
+//                        Spacer()
+//                    }
+//                    
+//                    HStack {
+//                        Image(systemName: "book")
+//                                                
+//                        Text("Actress")
+//                        
+//                        Spacer()
+//                    }
+//                }
+//                .padding()
+//                .background(Color.coffee.opacity(0.08))
+//                .font(.subheadline)
+//                .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
         .background(Color.cream)

@@ -35,7 +35,7 @@ struct RecipeInfoView: View {
                 } // button label
             } // HStack
             
-            Text(recipe.ingredients)
+            Text(recipe.ingredients.map(\.name).joined(separator: ", "))
                 .font(.subheadline)
                 .lineLimit(2)
             

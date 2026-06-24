@@ -11,6 +11,14 @@ import SwiftUI
 struct BiteMeApp: App {
     @StateObject private var savedRecipes = SavedRecipes()
 
+    init() {
+        URLCache.shared = URLCache(
+            memoryCapacity: 50 * 1024 * 1024,
+            diskCapacity: 200 * 1024 * 1024,
+            diskPath: "biteme_url_cache"
+        )
+    }
+
     var body: some Scene {
         WindowGroup {
 //            ContentView()

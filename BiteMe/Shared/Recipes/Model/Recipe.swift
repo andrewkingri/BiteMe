@@ -11,6 +11,12 @@ struct Recipe: Identifiable, Hashable {
     let id: String
     let name: String
     var dietTags: String
-    var ingredients: String
+    var ingredients: [Ingredient]
+    var instructions: String
     var imageURLs: [String]
+}
+
+struct Ingredient: Hashable {
+    let name: String
+    let measure: String
 }

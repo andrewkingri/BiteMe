@@ -40,6 +40,7 @@
 		466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */; };
 		466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */; };
 		46A352362FEC0A6B0046701E /* MealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352352FEC0A6B0046701E /* MealDBService.swift */; };
+		46A352382FEC1A680046701E /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352372FEC1A680046701E /* CachedAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipesView.swift; sourceTree = "<group>"; };
 		466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		46A352352FEC0A6B0046701E /* MealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBService.swift; sourceTree = "<group>"; };
+		46A352372FEC1A680046701E /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			children = (
 				465DA99E2E9AED52001442EE /* MockData */,
 				465DA9882E9ADBA7001442EE /* Constants */,
+				46A352372FEC1A680046701E /* CachedAsyncImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				465DA9A02E9AED5C001442EE /* MockData.swift in Sources */,
 				465DA9A42E9B001C001442EE /* SwipeAction.swift in Sources */,
 				465DA9802E9AC120001442EE /* MainTabView.swift in Sources */,
+				46A352382FEC1A680046701E /* CachedAsyncImage.swift in Sources */,
 				462032AD2EA031710056EF0E /* ImageGridView.swift in Sources */,
 				466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */,
 				466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */,
