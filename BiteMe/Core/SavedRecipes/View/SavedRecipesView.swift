@@ -12,6 +12,14 @@ struct SavedRecipesView: View {
     @EnvironmentObject private var menus: Menus
     @State private var presentedRecipe: Recipe?
     @State private var menuSheetRecipe: Recipe?
+    @State private var menusCollapsed = false
+
+    private func setMenusCollapsed(_ collapsed: Bool) {
+        guard collapsed != menusCollapsed else { return }
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+            menusCollapsed = collapsed
+        }
+    }
 
     var body: some View {
         NavigationView {
@@ -36,19 +44,41 @@ struct SavedRecipesView: View {
                     Spacer()
                 } else {
                     ScrollView {
-                        LazyVGrid(columns: columns, spacing: 16) {
-                            ForEach(store.recipes) { recipe in
-                                cell(for: recipe)
-                                    .contentShape(Rectangle())
-                                    .onTapGesture {
-                                        presentedRecipe = recipe
-                                    }
-                                    .transition(.scale(scale: 0.8).combined(with: .opacity))
+                        VStack(spacing: 0) {
+                            LazyVGrid(columns: columns, spacing: 16) {
+                                ForEach(store.recipes) { recipe in
+                                    cell(for: recipe)
+                                        .contentShape(Rectangle())
+                                        .onTapGesture {
+                                            presentedRecipe = recipe
+                                        }
+                                        .transition(.scale(scale: 0.8).combined(with: .opacity))
+                                }
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.top, 12)
+                            .animation(.spring(response: 0.4, dampingFraction: 0.8), value: store.recipes.map(\.id))
+                            .overlay {
+                                GeometryReader { proxy in
+                                    Color.clear
+                                        .preference(
+                                            key: ScrollOffsetKey.self,
+                                            value: proxy.frame(in: .named("savedScroll")).minY
+                                        )
+                                        .allowsHitTesting(false)
+                                }
                             }
                         }
-                        .padding(.horizontal, 12)
-                        .padding(.top, 12)
-                        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: store.recipes.map(\.id))
+                    }
+                    .coordinateSpace(name: "savedScroll")
+                    .onPreferenceChange(ScrollOffsetKey.self) { offset in
+                        // Hysteresis: collapse after scrolling down a bit,
+                        // only unfold once we're essentially back at the top.
+                        if menusCollapsed {
+                            if offset > -4 { setMenusCollapsed(false) }
+                        } else {
+                            if offset < -24 { setMenusCollapsed(true) }
+                        }
                     }
                     .overlay(alignment: .top) {
                         LinearGradient(
@@ -71,6 +101,13 @@ struct SavedRecipesView: View {
                 AddToMenuView(recipe: recipe)
             }
         }
+    }
+}
+
+private struct ScrollOffsetKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
     }
 }
 
@@ -114,7 +151,7 @@ private extension SavedRecipesView {
                         .foregroundStyle(Color.mustard)
                 }
             }
-            .frame(width: 140, height: 100)
+            .frame(width: menusCollapsed ? 0 : 140, height: menusCollapsed ? 0 : 100)
             .clipped()
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
@@ -138,7 +175,7 @@ private extension SavedRecipesView {
 //                .font(.caption)
 //                .foregroundStyle(Color.coffee.opacity(0.6))
         }
-        .frame(width: 140, alignment: .leading)
+        .frame(width: menusCollapsed ? nil : 140, alignment: .leading)
     }
 
     var emptyState: some View {
