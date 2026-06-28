@@ -117,6 +117,8 @@ private extension AddToMenuView {
         } label: {
             HStack {
                 Image(systemName: "plus.circle.fill")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, Color.mustard)
                 Text("Create New Menu")
                     .fontWeight(.semibold)
             }

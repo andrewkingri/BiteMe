@@ -11,6 +11,7 @@ import SwiftUI
 struct BiteMeApp: App {
     @StateObject private var savedRecipes = SavedRecipes()
     @StateObject private var menus = Menus()
+    @StateObject private var auth = AuthManager()
 
     init() {
         URLCache.shared = URLCache(
@@ -22,10 +23,16 @@ struct BiteMeApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            MainTabView()
-                .environmentObject(savedRecipes)
-                .environmentObject(menus)
+            Group {
+                if auth.isLoggedIn {
+                    MainTabView()
+                } else {
+                    LoginView()
+                }
+            }
+            .environmentObject(savedRecipes)
+            .environmentObject(menus)
+            .environmentObject(auth)
         }
     }
 }

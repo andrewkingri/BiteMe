@@ -25,8 +25,6 @@ struct SavedRecipesView: View {
 
                 if !menus.menus.isEmpty {
                     menuStrip
-//                        .padding(.top, 16)
-//                        .padding(.bottom, 16)
                         .padding(.top)
                         .padding(.bottom)
                 }
@@ -51,6 +49,15 @@ struct SavedRecipesView: View {
                         .padding(.horizontal, 12)
                         .padding(.top, 12)
                         .animation(.spring(response: 0.4, dampingFraction: 0.8), value: store.recipes.map(\.id))
+                    }
+                    .overlay(alignment: .top) {
+                        LinearGradient(
+                            colors: [Color.cream, Color.cream.opacity(0)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .frame(height: 24)
+                        .allowsHitTesting(false)
                     }
                 }
             }
@@ -186,7 +193,8 @@ private extension SavedRecipesView {
         } label: {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(Color.mustard)
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.white, Color.mustard)
                 .padding(8)
         }
         .buttonStyle(.plain)

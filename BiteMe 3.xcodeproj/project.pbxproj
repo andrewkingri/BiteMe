@@ -36,6 +36,8 @@
 		465DA9A02E9AED5C001442EE /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA99F2E9AED5C001442EE /* MockData.swift */; };
 		465DA9A22E9AFD4A001442EE /* SwipeActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA9A12E9AFD4A001442EE /* SwipeActionButtonsView.swift */; };
 		465DA9A42E9B001C001442EE /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DA9A32E9B001C001442EE /* SwipeAction.swift */; };
+		4664406E2FF0AAFC00576ECE /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4664406D2FF0AAFC00576ECE /* AuthManager.swift */; };
+		466440712FF0AB0800576ECE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466440702FF0AB0800576ECE /* LoginView.swift */; };
 		466A03602FEA2A1700E1CB35 /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */; };
 		466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */; };
 		466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */; };
@@ -99,6 +101,8 @@
 		465DA99F2E9AED5C001442EE /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		465DA9A12E9AFD4A001442EE /* SwipeActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButtonsView.swift; sourceTree = "<group>"; };
 		465DA9A32E9B001C001442EE /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
+		4664406D2FF0AAFC00576ECE /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		466440702FF0AB0800576ECE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		466A035F2FEA2A1700E1CB35 /* SavedRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
 		466A03632FEA2A3C00E1CB35 /* SavedRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipesView.swift; sourceTree = "<group>"; };
 		466A03652FEA2F7E00E1CB35 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				465DA9792E9AC08B001442EE /* TabBar */,
 				466A03612FEA2A3100E1CB35 /* SavedRecipes */,
 				46A3523F2FF092240046701E /* Menus */,
+				4664406C2FF0AAFB00576ECE /* Auth */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -405,6 +410,23 @@
 				465DA99F2E9AED5C001442EE /* MockData.swift */,
 			);
 			path = MockData;
+			sourceTree = "<group>";
+		};
+		4664406C2FF0AAFB00576ECE /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4664406D2FF0AAFC00576ECE /* AuthManager.swift */,
+				4664406F2FF0AB0800576ECE /* View */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4664406F2FF0AB0800576ECE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				466440702FF0AB0800576ECE /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		466A03612FEA2A3100E1CB35 /* SavedRecipes */ = {
@@ -597,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A352362FEC0A6B0046701E /* MealDBService.swift in Sources */,
+				4664406E2FF0AAFC00576ECE /* AuthManager.swift in Sources */,
 				462032B12EA41A850056EF0E /* RecipeMatchView.swift in Sources */,
 				465DA98C2E9ADE3B001442EE /* ImageScrollingOverlay.swift in Sources */,
 				462032A32EA022FB0056EF0E /* CurrentUserProfileView.swift in Sources */,
@@ -608,6 +631,7 @@
 				462032A52EA023ED0056EF0E /* CurrentUserProfileHeaderView.swift in Sources */,
 				465DA9872E9AD927001442EE /* SwipeActionIndicatorView.swift in Sources */,
 				465DA9A02E9AED5C001442EE /* MockData.swift in Sources */,
+				466440712FF0AB0800576ECE /* LoginView.swift in Sources */,
 				465DA9A42E9B001C001442EE /* SwipeAction.swift in Sources */,
 				465DA9802E9AC120001442EE /* MainTabView.swift in Sources */,
 				46A352382FEC1A680046701E /* CachedAsyncImage.swift in Sources */,

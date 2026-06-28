@@ -31,7 +31,8 @@ struct ImageGridView: View {
                         
                         Image(systemName: "plus.circle.fill")
                             .imageScale(.large)
-                            .foregroundStyle(Color.terracotta)
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.white, Color.terracotta)
                             .offset(x: 4, y: 4)
                     }
                 }

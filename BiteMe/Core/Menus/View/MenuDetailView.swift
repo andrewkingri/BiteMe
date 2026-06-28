@@ -138,7 +138,8 @@ private extension MenuDetailView {
         } label: {
             Image(systemName: "plus.circle.fill")
                 .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(Color.mustard)
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.white, Color.mustard)
                 .padding(8)
         }
         .buttonStyle(.plain)
