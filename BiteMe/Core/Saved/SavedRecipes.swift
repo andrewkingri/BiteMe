@@ -13,7 +13,7 @@ class SavedRecipes: ObservableObject {
 
     func save(_ recipe: Recipe) {
         guard !recipes.contains(where: { $0.id == recipe.id }) else { return }
-        recipes.append(recipe)
+        recipes.insert(recipe, at: 0)
     }
 
     func remove(_ recipe: Recipe) {
