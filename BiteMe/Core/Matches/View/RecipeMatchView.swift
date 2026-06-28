@@ -59,7 +59,7 @@ struct RecipeMatchView: View {
                     .font(Font.body.weight(.bold))
                     .foregroundStyle(Color.coffee)
                     .frame(width: 350, height: 44)
-                    .background(Color.mustard)
+                    .background(Color.terracotta)
                     .clipShape(Capsule())
                     
                     Button("Keep Swiping") {

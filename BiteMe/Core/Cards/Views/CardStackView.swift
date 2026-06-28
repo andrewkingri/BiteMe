@@ -61,5 +61,6 @@ struct CardStackView_Previews: PreviewProvider {
             CardStackView()
         }
         .environmentObject(SavedRecipes())
+        .environmentObject(Menus())
     }
 }

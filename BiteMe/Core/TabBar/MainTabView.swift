@@ -26,7 +26,7 @@ struct MainTabView: View {
                 .tabItem { Image(systemName: "person") }
                 .tag(3)
         }
-        .tint(Color.mustard)
+        .tint(Color.terracotta)
         .background(Color.cream)
     }
 }
@@ -35,5 +35,6 @@ struct MainTabBar_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
             .environmentObject(SavedRecipes())
+            .environmentObject(Menus())
     }
 }

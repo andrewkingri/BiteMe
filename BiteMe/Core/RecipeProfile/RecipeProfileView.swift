@@ -34,7 +34,7 @@ struct RecipeProfileView: View {
                     Image(systemName: "arrow.down.circle.fill")
                         .imageScale(.large)
                         .font(Font.body.weight(.bold))
-                        .foregroundStyle(Color.mustard)
+                        .foregroundStyle(Color.terracotta)
                 }
             }
             .padding(.horizontal)

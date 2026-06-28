@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct BiteMeApp: App {
     @StateObject private var savedRecipes = SavedRecipes()
+    @StateObject private var menus = Menus()
 
     init() {
         URLCache.shared = URLCache(
@@ -24,6 +25,7 @@ struct BiteMeApp: App {
 //            ContentView()
             MainTabView()
                 .environmentObject(savedRecipes)
+                .environmentObject(menus)
         }
     }
 }

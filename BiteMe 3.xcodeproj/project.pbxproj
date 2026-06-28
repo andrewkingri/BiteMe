@@ -43,6 +43,10 @@
 		46A352382FEC1A680046701E /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352372FEC1A680046701E /* CachedAsyncImage.swift */; };
 		46A3523B2FEC7D3C0046701E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A3523A2FEC7D3C0046701E /* SearchViewModel.swift */; };
 		46A3523E2FEC7D510046701E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A3523D2FEC7D510046701E /* SearchView.swift */; };
+		46A352412FF092240046701E /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352402FF092240046701E /* Menus.swift */; };
+		46A352442FF092270046701E /* AddToMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352432FF092270046701E /* AddToMenuView.swift */; };
+		46A352472FF092330046701E /* RecipeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352462FF092330046701E /* RecipeMenu.swift */; };
+		46A352492FF098090046701E /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A352482FF098090046701E /* MenuDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,10 @@
 		46A352372FEC1A680046701E /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		46A3523A2FEC7D3C0046701E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		46A3523D2FEC7D510046701E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		46A352402FF092240046701E /* Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
+		46A352432FF092270046701E /* AddToMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToMenuView.swift; sourceTree = "<group>"; };
+		46A352462FF092330046701E /* RecipeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMenu.swift; sourceTree = "<group>"; };
+		46A352482FF098090046701E /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +259,7 @@
 				465DA97A2E9AC09D001442EE /* Cards */,
 				465DA9792E9AC08B001442EE /* TabBar */,
 				466A03612FEA2A3100E1CB35 /* SavedRecipes */,
+				46A3523F2FF092240046701E /* Menus */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -430,6 +439,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		46A3523F2FF092240046701E /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				46A352402FF092240046701E /* Menus.swift */,
+				46A352422FF092260046701E /* View */,
+				46A352452FF0922E0046701E /* Model */,
+			);
+			path = Menus;
+			sourceTree = "<group>";
+		};
+		46A352422FF092260046701E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46A352432FF092270046701E /* AddToMenuView.swift */,
+				46A352482FF098090046701E /* MenuDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46A352452FF0922E0046701E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46A352462FF092330046701E /* RecipeMenu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -566,6 +602,7 @@
 				462032A32EA022FB0056EF0E /* CurrentUserProfileView.swift in Sources */,
 				465DA99D2E9AEC4D001442EE /* CardService.swift in Sources */,
 				462032AB2EA02F220056EF0E /* EditUserProfileView.swift in Sources */,
+				46A352472FF092330046701E /* RecipeMenu.swift in Sources */,
 				46A3523B2FEC7D3C0046701E /* SearchViewModel.swift in Sources */,
 				465DA9852E9ACF2C001442EE /* RecipeInfoView.swift in Sources */,
 				462032A52EA023ED0056EF0E /* CurrentUserProfileHeaderView.swift in Sources */,
@@ -576,10 +613,13 @@
 				46A352382FEC1A680046701E /* CachedAsyncImage.swift in Sources */,
 				462032AD2EA031710056EF0E /* ImageGridView.swift in Sources */,
 				46A3523E2FEC7D510046701E /* SearchView.swift in Sources */,
+				46A352492FF098090046701E /* MenuDetailView.swift in Sources */,
 				466A03662FEA2F7E00E1CB35 /* Color+Theme.swift in Sources */,
+				46A352442FF092270046701E /* AddToMenuView.swift in Sources */,
 				466A03642FEA2A3C00E1CB35 /* SavedRecipesView.swift in Sources */,
 				465DA98E2E9AE471001442EE /* CardImageIndicatorView.swift in Sources */,
 				465DA9A22E9AFD4A001442EE /* SwipeActionButtonsView.swift in Sources */,
+				46A352412FF092240046701E /* Menus.swift in Sources */,
 				465DA9972E9AEB63001442EE /* CardModel.swift in Sources */,
 				465DA9902E9AE904001442EE /* CardStackView.swift in Sources */,
 				465DA94D2E9ABEE2001442EE /* ContentView.swift in Sources */,
